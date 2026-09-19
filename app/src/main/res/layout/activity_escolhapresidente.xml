@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/retangulo">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="409dp"
+        android:layout_height="730dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-14dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <Button
+            android:id="@+id/btconfirmar2"
+            android:layout_width="121dp"
+            android:layout_height="50dp"
+            android:backgroundTint="#FFEB3B"
+            android:text="Confirmar"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="140dp"
+            tools:layout_editor_absoluteY="491dp" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="125dp"
+            android:layout_height="82dp"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/eleitoral" />
+
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Candidato 1 \nPartido:"
+            tools:layout_editor_absoluteX="47dp"
+            tools:layout_editor_absoluteY="135dp" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Candidato 2 \n Partido:"
+            tools:layout_editor_absoluteX="47dp"
+            tools:layout_editor_absoluteY="183dp" />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Candidato 3 \n Partido:"
+            tools:layout_editor_absoluteX="47dp"
+            tools:layout_editor_absoluteY="231dp" />
+
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Candidato 4 \n Partido: "
+            tools:layout_editor_absoluteX="47dp"
+            tools:layout_editor_absoluteY="279dp" />
+        <RadioButton
+            android:id="@+id/radioButton5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Branco"
+            tools:layout_editor_absoluteX="47dp"
+            tools:layout_editor_absoluteY="327dp" />
+
+        <RadioButton
+            android:id="@+id/radioButton6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nulo"
+            tools:layout_editor_absoluteX="47dp"
+            tools:layout_editor_absoluteY="375dp" />
+
+        <RadioButton
+            android:id="@+id/radioButton7"
+            android:layout_width="275dp"
+            android:layout_height="44dp"
+            android:text="Não sei ou não quero responder"
+            tools:layout_editor_absoluteX="47dp"
+            tools:layout_editor_absoluteY="423dp" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="52dp"
+            android:layout_height="48dp"
+            app:srcCompat="@drawable/images"
+            tools:layout_editor_absoluteX="161dp"
+            tools:layout_editor_absoluteY="135dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
