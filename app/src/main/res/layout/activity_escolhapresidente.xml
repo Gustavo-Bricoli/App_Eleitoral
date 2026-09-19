@@ -88,7 +88,7 @@
             android:id="@+id/radioButton7"
             android:layout_width="275dp"
             android:layout_height="44dp"
-            android:text="Não sei ou não quero responder"
+            android:text="Não sei ou não quero responder."
             tools:layout_editor_absoluteX="47dp"
             tools:layout_editor_absoluteY="423dp" />
 
