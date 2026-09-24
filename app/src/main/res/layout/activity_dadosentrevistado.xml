@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity_problemas"
+    android:background="@drawable/retangulo">
+
+    <Button
+        android:id="@+id/btconfirmar4"
+        android:layout_width="121dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="164dp"
+        android:backgroundTint="#FFEB3B"
+        android:text="Confirmar"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.872"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btencerrar2"
+        android:layout_width="121dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#FFEB3B"
+        android:text="Encerrar"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="515dp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="390dp"
+        android:layout_height="130dp"
+        android:fontFamily="arial"
+        android:text="Informe ao entrevistado que para integridade e a auditoria dos dados, além de combater fraudes eleitorais será necessário recolhimento de seus dados - nome completo e telefone.\n Além de dados de geolocalização também serem armazenados."
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="11dp"
+        tools:layout_editor_absoluteY="100dp" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:fontFamily="arial"
+        android:text="Dados do entrevistado"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="306dp"
+        android:layout_height="71dp"
+        android:hint="Nome completo"
+        android:textColorHint="@color/black"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="230dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editText"
+        android:layout_width="308dp"
+        android:layout_height="64dp"
+        android:hint="Telefone"
+        android:textColorHint="@color/black"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="301dp" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="388dp"
+        android:layout_height="116dp"
+        android:fontFamily="arial"
+        android:text="Informe para o entrevistado que seus dados não serão distribuídos, sendo apenas para fins de pesquisa eleitoral, seguindo a regulamentação da lei Lei Geral de Proteção de Dados Pessoais (LGPD)"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="378dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
