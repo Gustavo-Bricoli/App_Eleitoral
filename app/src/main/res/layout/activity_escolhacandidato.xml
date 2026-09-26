@@ -18,9 +18,9 @@
             android:id="@+id/btconfirmar2"
             android:layout_width="121dp"
             android:layout_height="50dp"
-            android:backgroundTint="#FFEB3B"
+            android:backgroundTint="#2E7D32"
             android:text="Confirmar"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textStyle="bold"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="140dp"
@@ -91,14 +91,6 @@
             android:text="Não sei ou não quero responder"
             tools:layout_editor_absoluteX="47dp"
             tools:layout_editor_absoluteY="423dp" />
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="52dp"
-            android:layout_height="48dp"
-            app:srcCompat="@drawable/images"
-            tools:layout_editor_absoluteX="161dp"
-            tools:layout_editor_absoluteY="135dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
