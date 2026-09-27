@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">app_eleitoral</string>
+    <string name="interviewee_audit_notice">Aviso: Os dados do entrevistado podem ser auditados.</string>
 </resources>

@@ -7,22 +7,22 @@ import android.database.sqlite.SQLiteOpenHelper
 import org.json.JSONArray
 
 data class SurveyResponse(
-    val name: String,
-    val phone: String,
-    val candidate: String,
-    val problems: List<String>,
-    val date: String,
-    val location: String
+    val nome: String,
+    val telefone: String,
+    val candidato: String,
+    val problemas: List<String>,
+    val data: String,
+    val localizacao: String
 )
 
 object SurveyDraft {
-    var candidate: String = ""
-    var problems: List<String> = emptyList()
+    var candidato: String = ""
+    var problemas: List<String> = emptyList()
     var mode: String = "Espontânea"
 
     fun clear() {
-        candidate = ""
-        problems = emptyList()
+        candidato = ""
+        problemas = emptyList()
         mode = "Espontânea"
     }
 }
@@ -43,12 +43,12 @@ object AppStore {
                 """
                 CREATE TABLE $TABLE_RESPONSES (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    name TEXT NOT NULL,
-                    phone TEXT NOT NULL,
-                    candidate TEXT NOT NULL,
-                    problems TEXT NOT NULL,
-                    date TEXT NOT NULL,
-                    location TEXT NOT NULL
+                    nome TEXT NOT NULL,
+                    telefone TEXT NOT NULL,
+                    candidato TEXT NOT NULL,
+                    problemas TEXT NOT NULL,
+                    data TEXT NOT NULL,
+                    localizacao TEXT NOT NULL
                 )
                 """.trimIndent()
             )
@@ -62,12 +62,12 @@ object AppStore {
     fun save(context: Context, response: SurveyResponse) {
         Database(context).use { helper ->
             val values = ContentValues().apply {
-                put("name", response.name)
-                put("phone", response.phone)
-                put("candidate", response.candidate)
-                put("problems", JSONArray(response.problems).toString())
-                put("date", response.date)
-                put("location", response.location)
+                put("nome", response.nome)
+                put("telefone", response.telefone)
+                put("candidato", response.candidato)
+                put("problemas", JSONArray(response.problemas).toString())
+                put("data", response.data)
+                put("localizacao", response.localizacao)
             }
             helper.writableDatabase.insertOrThrow(TABLE_RESPONSES, null, values)
         }
@@ -77,19 +77,19 @@ object AppStore {
         Database(context).use { helper ->
             helper.readableDatabase.query(
                 TABLE_RESPONSES,
-                arrayOf("name", "phone", "candidate", "problems", "date", "location"),
+                arrayOf("nome", "telefone", "candidato", "problemas", "data", "localizacao"),
                 null,
                 null,
                 null,
                 null,
                 "id ASC"
             ).use { cursor ->
-                val name = cursor.getColumnIndexOrThrow("name")
-                val phone = cursor.getColumnIndexOrThrow("phone")
-                val candidate = cursor.getColumnIndexOrThrow("candidate")
-                val problems = cursor.getColumnIndexOrThrow("problems")
-                val date = cursor.getColumnIndexOrThrow("date")
-                val location = cursor.getColumnIndexOrThrow("location")
+                val name = cursor.getColumnIndexOrThrow("nome")
+                val phone = cursor.getColumnIndexOrThrow("telefone")
+                val candidate = cursor.getColumnIndexOrThrow("candidato")
+                val problems = cursor.getColumnIndexOrThrow("problemas")
+                val date = cursor.getColumnIndexOrThrow("data")
+                val location = cursor.getColumnIndexOrThrow("localizacao")
                 return buildList {
                     while (cursor.moveToNext()) {
                         val problemArray = JSONArray(cursor.getString(problems))

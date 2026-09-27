@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -32,12 +31,32 @@
             android:name=".activity_dadosentrevistado"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".HomeActivity" android:exported="false" />
-        <activity android:name=".SurveyTypeActivity" android:exported="false" />
-        <activity android:name=".CandidateActivity" android:exported="false" />
-        <activity android:name=".ProblemsActivity" android:exported="false" />
-        <activity android:name=".IntervieweeActivity" android:exported="false" />
-        <activity android:name=".AdminActivity" android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SurveyTypeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CandidateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProblemsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".IntervieweeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".telaadmin"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".dadoseleitores"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
