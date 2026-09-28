@@ -5,13 +5,16 @@ import android.content.ContentValues
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import org.json.JSONArray
+import java.time.LocalDate
+import java.time.LocalTime
 
 data class SurveyResponse(
     val nome: String,
     val telefone: String,
     val candidato: String,
     val problemas: List<String>,
-    val data: String,
+    val data: LocalDate,
+    val horario: LocalTime,
     val localizacao: String
 )
 
@@ -48,6 +51,7 @@ object AppStore {
                     candidato TEXT NOT NULL,
                     problemas TEXT NOT NULL,
                     data TEXT NOT NULL,
+                    horario TEXT NOT NULL,
                     localizacao TEXT NOT NULL
                 )
                 """.trimIndent()
@@ -66,7 +70,8 @@ object AppStore {
                 put("telefone", response.telefone)
                 put("candidato", response.candidato)
                 put("problemas", JSONArray(response.problemas).toString())
-                put("data", response.data)
+                put("data", response.data.toString())
+                put("horario", response.horario.toString())
                 put("localizacao", response.localizacao)
             }
             helper.writableDatabase.insertOrThrow(TABLE_RESPONSES, null, values)
@@ -77,30 +82,32 @@ object AppStore {
         Database(context).use { helper ->
             helper.readableDatabase.query(
                 TABLE_RESPONSES,
-                arrayOf("nome", "telefone", "candidato", "problemas", "data", "localizacao"),
+                arrayOf("nome", "telefone", "candidato", "problemas", "data", "horario", "localizacao"),
                 null,
                 null,
                 null,
                 null,
                 "id ASC"
             ).use { cursor ->
-                val name = cursor.getColumnIndexOrThrow("nome")
-                val phone = cursor.getColumnIndexOrThrow("telefone")
-                val candidate = cursor.getColumnIndexOrThrow("candidato")
-                val problems = cursor.getColumnIndexOrThrow("problemas")
-                val date = cursor.getColumnIndexOrThrow("data")
-                val location = cursor.getColumnIndexOrThrow("localizacao")
+                val nome = cursor.getColumnIndexOrThrow("nome")
+                val telefone = cursor.getColumnIndexOrThrow("telefone")
+                val candidato = cursor.getColumnIndexOrThrow("candidato")
+                val problemas = cursor.getColumnIndexOrThrow("problemas")
+                val data = cursor.getColumnIndexOrThrow("data")
+                val horario = cursor.getColumnIndexOrThrow("horario")
+                val localizacao = cursor.getColumnIndexOrThrow("localizacao")
                 return buildList {
                     while (cursor.moveToNext()) {
-                        val problemArray = JSONArray(cursor.getString(problems))
+                        val problemasArray = JSONArray(cursor.getString(problemas))
                         add(
                             SurveyResponse(
-                                cursor.getString(name),
-                                cursor.getString(phone),
-                                cursor.getString(candidate),
-                                (0 until problemArray.length()).map(problemArray::getString),
-                                cursor.getString(date),
-                                cursor.getString(location)
+                                nome = cursor.getString(nome),
+                                telefone = cursor.getString(telefone),
+                                candidato = cursor.getString(candidato),
+                                problemas = (0 until problemasArray.length()).map(problemasArray::getString),
+                                data = LocalDate.parse(cursor.getString(data)),
+                                horario = LocalTime.parse(cursor.getString(horario)),
+                                localizacao = cursor.getString(localizacao)
                             )
                         )
                     }
@@ -108,7 +115,6 @@ object AppStore {
             }
         }
     }
-
     fun clear(context: Context) {
         Database(context).use { helper ->
             helper.writableDatabase.delete(TABLE_RESPONSES, null, null)

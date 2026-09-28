@@ -5,7 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import java.time.format.DateTimeFormatter
 
+private val formatodata = DateTimeFormatter.ofPattern("dd/MM/yyyy")
+private val formatohora = DateTimeFormatter.ofPattern("HH:mm")
 class EleitorAdapter(private val eleitores: List<SurveyResponse>) :
     RecyclerView.Adapter<EleitorAdapter.EleitorViewHolder>(){
 
@@ -15,7 +18,7 @@ class EleitorAdapter(private val eleitores: List<SurveyResponse>) :
         val candidato: TextView = itemView.findViewById(R.id.candidato)
         val localizacao: TextView = itemView.findViewById(R.id.localizacao)
         val problemas: TextView = itemView.findViewById(R.id.problemas)
-        val data: TextView = itemView.findViewById(R.id.data)
+        val dataehorario: TextView = itemView.findViewById(R.id.dataehorario)
     }
 
 override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EleitorViewHolder{
@@ -32,7 +35,9 @@ override fun onBindViewHolder(holder: EleitorViewHolder, position: Int){
     holder.candidato.text = eleitor.candidato
     holder.localizacao.text = eleitor.localizacao
     holder.problemas.text = eleitor.problemas.joinToString(", ")
-    holder.data.text = eleitor.data
+    val estruturadata = eleitor.data.format(formatodata)
+    val estruturahora = eleitor.data.format(formatohora)
+    holder.dataehorario.text = "${estruturadata} às ${estruturahora}"
     }
 override fun getItemCount(): Int = eleitores.size
 }
