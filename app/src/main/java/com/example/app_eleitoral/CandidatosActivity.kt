@@ -8,23 +8,23 @@ import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 
-class CandidateActivity : AppCompatActivity() {
-    private data class Candidate(
+class CandidatosActivity : AppCompatActivity() {
+    private data class Candidatos(
         val name: String,
         val party: String,
         val photo: Int? = null
     )
 
     // Troque os nomes, partidos e imagens desta lista quando definir os candidatos reais.
-    private val candidates = listOf(
-        Candidate("Duas-Caras", "Partido 1", R.drawable.duas_caras),
-        Candidate("Pinguim", "Partido 2", R.drawable.pinguim),
-        Candidate("Espantalho", "Partido 3", R.drawable.espantalho),
-        Candidate("Bane", "Partido 4", R.drawable.bane),
-        Candidate("Coringa", "Partido 5", R.drawable.coringa),
-        Candidate("Branco", ""),
-        Candidate("Nulo", ""),
-        Candidate("Não sabe / não quer responder", "")
+    private val candidatos = listOf(
+        Candidatos("Duas-Caras", "Partido 1", R.drawable.duas_caras),
+        Candidatos("Pinguim", "Partido 2", R.drawable.pinguim),
+        Candidatos("Espantalho", "Partido 3", R.drawable.espantalho),
+        Candidatos("Bane", "Partido 4", R.drawable.bane),
+        Candidatos("Coringa", "Partido 5", R.drawable.coringa),
+        Candidatos("Branco", ""),
+        Candidatos("Nulo", ""),
+        Candidatos("Não sabe / não quer responder", "")
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,15 +35,15 @@ class CandidateActivity : AppCompatActivity() {
         group.orientation = RadioGroup.VERTICAL
         val stimulated = intent.getBooleanExtra("stimulated", false)
         if (stimulated) {
-            candidates.forEach { candidate ->
+            candidatos.forEach { candidatoItem ->
                 group.addView(RadioButton(this).apply {
-                    text = if (candidate.party.isBlank()) candidate.name
-                    else "${candidate.name}\n${candidate.party}"
+                    text = if (candidatoItem.party.isBlank()) candidatoItem.name
+                    else "${candidatoItem.name}\n${candidatoItem.party}"
                     textSize = 16f
                     minHeight = 76
                     setPadding(8, 8, 8, 8)
-                    candidate.photo?.let { photo ->
-                        val image: Drawable = requireNotNull(AppCompatResources.getDrawable(this@CandidateActivity, photo))
+                    candidatoItem.photo?.let { photo ->
+                        val image: Drawable = requireNotNull(AppCompatResources.getDrawable(this@CandidatosActivity, photo))
                         val size = (64 * resources.displayMetrics.density).toInt()
                         image.setBounds(0, 0, size, size)
                         setCompoundDrawables(image, null, null, null)
@@ -72,8 +72,8 @@ class CandidateActivity : AppCompatActivity() {
         setContentView(root)
     }
 
-    private fun next(candidate: String) {
-        SurveyDraft.candidate = candidate
-        startActivity(Intent(this, ProblemsActivity::class.java))
+    private fun next(candidatos: String) {
+        SurveyDraft.candidato = candidatos
+        startActivity(Intent(this, activity_problemas::class.java))
     }
 }

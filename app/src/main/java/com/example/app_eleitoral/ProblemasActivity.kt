@@ -6,14 +6,14 @@ import android.widget.CheckBox
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 
-class ProblemsActivity : AppCompatActivity() {
-    private val problems = listOf("Geração de emprego", "Saúde", "Asfaltamento e manutenção de vias", "Iluminação pública", "Lazer e cultura", "Meio ambiente", "Segurança", "Educação", "Transporte", "Custo de vida")
+class ProblemasActivity : AppCompatActivity() {
+    private val problemas = listOf("Geração de emprego", "Saúde", "Asfaltamento e manutenção de vias", "Iluminação pública", "Lazer e cultura", "Meio ambiente", "Segurança", "Educação", "Transporte", "Custo de vida")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val root = Ui.root(this)
         root.addView(Ui.title(this, "Selecione até três problemas"))
-        val checks = problems.map { label ->
+        val checks = problemas.map { label ->
             CheckBox(this).apply { text = label }
         }
         checks.forEach { check ->
@@ -30,7 +30,7 @@ class ProblemsActivity : AppCompatActivity() {
             if (otherValue.isNotEmpty()) selected.add(otherValue)
             if (selected.size > 3) Ui.message(this, "Escolha no máximo três problemas.")
             else {
-                SurveyDraft.problems = selected
+                SurveyDraft.problemas = selected
                 startActivity(Intent(this, IntervieweeActivity::class.java))
             }
         })

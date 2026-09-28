@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App_eleitoral">
         <activity
-            android:name=".MainActivity"
+            android:name=".activity_login"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
@@ -38,10 +38,10 @@
             android:name=".SurveyTypeActivity"
             android:exported="false" />
         <activity
-            android:name=".CandidateActivity"
+            android:name=".CandidatosActivity"
             android:exported="false" />
         <activity
-            android:name=".ProblemsActivity"
+            android:name=".ProblemasActivity"
             android:exported="false" />
         <activity
             android:name=".IntervieweeActivity"

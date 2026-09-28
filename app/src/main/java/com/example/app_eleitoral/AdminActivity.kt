@@ -15,13 +15,13 @@ class AdminActivity : AppCompatActivity() {
         if (people) {
             if (responses.isEmpty()) addLine(root, "Nenhum entrevistado cadastrado.")
             responses.forEach {
-                addLine(root, "${it.name} - ${it.phone}\n${it.date} | ${it.location}")
+                addLine(root, "${it.nome} - ${it.telefone}\n${it.data} | \n${it.horario} | ${it.localizacao}")
             }
         } else {
             addLine(root, "Quantidade de entrevistados: ${responses.size}")
-            val counts = responses.groupingBy { it.candidate.ifBlank { "Não informado" } }.eachCount()
+            val counts = responses.groupingBy { it.candidato.ifBlank { "Não informado" } }.eachCount()
             addLine(root, if (counts.isEmpty()) "Ainda não há votos registrados." else counts.entries.joinToString("\n") { "${it.key}: ${it.value} voto(s)" })
-            val problemCounts = responses.flatMap { it.problems }.groupingBy { it }.eachCount()
+            val problemCounts = responses.flatMap { it.problemas }.groupingBy { it }.eachCount()
             if (problemCounts.isNotEmpty()) {
                 addLine(root, "\nProblemas mais citados:\n" + problemCounts.entries.sortedByDescending { it.value }
                     .joinToString("\n") { "${it.key}: ${it.value}" })

@@ -25,7 +25,7 @@ class HomeActivity : AppCompatActivity() {
             root.addView(Ui.button(this, "Limpar dados da pesquisa") { confirmClear() })
         }
         root.addView(Ui.button(this, "Sair") {
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, activity_login::class.java))
             finish()
         })
         setContentView(root)

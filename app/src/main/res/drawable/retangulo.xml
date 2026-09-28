@@ -9,4 +9,5 @@
         android:pathData="M-10,10 L10,-10 M-10,30 L40,-17 M0,40 L40,0  M0,60 L45,17  M30,50 L50,30"
         android:strokeColor="#00FF00"
         android:strokeWidth="4" />
+
 </vector>

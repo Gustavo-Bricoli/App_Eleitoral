@@ -13,7 +13,7 @@ class SurveyTypeActivity : AppCompatActivity() {
         root.addView(Ui.button(this, "Estimulada") { open("Estimulada", true) })
         root.addView(Ui.button(this, "Problemas") {
             SurveyDraft.mode = "Problemas"
-            startActivity(Intent(this, ProblemsActivity::class.java))
+            startActivity(Intent(this, ProblemasActivity::class.java))
         })
         root.addView(Ui.button(this, "Seguir ordem completa") { open("Espontânea", false) })
         setContentView(root)
@@ -21,6 +21,6 @@ class SurveyTypeActivity : AppCompatActivity() {
 
     private fun open(mode: String, stimulated: Boolean) {
         SurveyDraft.mode = mode
-        startActivity(Intent(this, CandidateActivity::class.java).putExtra("stimulated", stimulated))
+        startActivity(Intent(this, CandidatosActivity::class.java).putExtra("stimulated", stimulated))
     }
 }
