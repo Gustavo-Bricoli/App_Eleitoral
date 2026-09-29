@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper
 import org.json.JSONArray
 import java.time.LocalDate
 import java.time.LocalTime
+import kotlin.io.encoding.Base64
 
 data class SurveyResponse(
     val nome: String,
@@ -15,7 +16,8 @@ data class SurveyResponse(
     val problemas: List<String>,
     val data: LocalDate,
     val horario: LocalTime,
-    val localizacao: String
+    val localizacao: String,
+    val assinaturaBase64: String = ""
 )
 
 object SurveyDraft {
@@ -52,7 +54,8 @@ object AppStore {
                     problemas TEXT NOT NULL,
                     data TEXT NOT NULL,
                     horario TEXT NOT NULL,
-                    localizacao TEXT NOT NULL
+                    localizacao TEXT NOT NULL,
+                    ASSINATURA TEXT NOT NULL
                 )
                 """.trimIndent()
             )
@@ -73,6 +76,7 @@ object AppStore {
                 put("data", response.data.toString())
                 put("horario", response.horario.toString())
                 put("localizacao", response.localizacao)
+                put("assinatura", response.assinaturaBase64)
             }
             helper.writableDatabase.insertOrThrow(TABLE_RESPONSES, null, values)
         }

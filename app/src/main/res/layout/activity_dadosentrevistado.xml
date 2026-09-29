@@ -7,59 +7,57 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity_problemas"
-    android:background="@drawable/retangulo">
+    android:background="@drawable/fundofinal">
 
     <Button
         android:id="@+id/btconfirmar4"
-        android:layout_width="121dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="164dp"
+        android:layout_width="123dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="52dp"
         android:backgroundTint="#2E7D32"
         android:text="Confirmar"
         android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.872"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toEndOf="@+id/btencerrar2"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btencerrar2"
-        android:layout_width="121dp"
+        android:layout_width="123dp"
         android:layout_height="52dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginBottom="52dp"
         android:backgroundTint="#2E7D32"
         android:text="Encerrar"
         android:textColor="@color/white"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="515dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintHorizontal_bias="0.15"
-        app:layout_constraintEnd_toStartOf="@id/btconfirmar4" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView9"
-        android:layout_width="390dp"
-        android:layout_height="130dp"
+        android:layout_width="386dp"
+        android:layout_height="104dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="arial"
         android:text="Informe ao entrevistado que para integridade e a auditoria dos dados, além de combater fraudes eleitorais será necessário recolhimento de seus dados - nome completo e telefone.\n Além de dados de geolocalização também serem armazenados."
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="17sp"
+        android:textSize="14sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="11dp"
-        tools:layout_editor_absoluteY="100dp"
-        app:layout_constraintTop_toBottomOf="@id/textView10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/textView10" />
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="arial"
         android:text="Dados do entrevistado"
         android:textColor="@color/black"
@@ -72,44 +70,82 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/editNome"
-        android:layout_width="306dp"
-        android:layout_height="71dp"
+        android:layout_width="301dp"
+        android:layout_height="64dp"
         android:hint="Nome completo"
         android:textColorHint="@color/black"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="44dp"
-        tools:layout_editor_absoluteY="230dp"
-        app:layout_constraintTop_toBottomOf="@id/textView9"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/textView9" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/editText"
-        android:layout_width="308dp"
-        android:layout_height="64dp"
+        android:layout_width="302dp"
+        android:layout_height="58dp"
         android:hint="Telefone"
         android:textColorHint="@color/black"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="301dp"
-        app:layout_constraintTop_toBottomOf="@id/editNome"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/editNome" />
+
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="388dp"
-        android:layout_height="116dp"
+        android:layout_width="389dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="16dp"
         android:fontFamily="arial"
         android:text="Informe para o entrevistado que seus dados não serão distribuídos, sendo apenas para fins de pesquisa eleitoral, seguindo a regulamentação da lei Lei Geral de Proteção de Dados Pessoais (LGPD)"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="17sp"
+        android:textSize="14sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="7dp"
-        tools:layout_editor_absoluteY="378dp"
-        app:layout_constraintTop_toBottomOf="@id/editText"
+        app:layout_constraintBottom_toTopOf="@+id/btencerrar2"
+        tools:layout_editor_absoluteX="12dp" />
+
+    <com.example.app_eleitoral.AssinaturaView
+        android:id="@+id/assinaturaView"
+        android:layout_width="353dp"
+        android:layout_height="163dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/textView11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.525"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintVertical_bias="0.291" />
+
+    <TextView
+        android:id="@+id/qdassinatura"
+        android:layout_width="353dp"
+        android:layout_height="161dp"
+        android:layout_marginTop="20dp"
+        android:text="Assinatura do entrevistado: "
+        android:textColor="@color/black"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/assinaturaView"
+        app:layout_constraintEnd_toEndOf="@+id/assinaturaView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/assinaturaView"
+        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/btlimpar"
+        android:layout_width="110dp"
+        android:layout_height="44dp"
+        android:backgroundTint="#FF0000"
+        android:text="Limpar"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView11"
+        app:layout_constraintEnd_toEndOf="@+id/qdassinatura"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/qdassinatura"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,6 +33,8 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.ink.strokes)
+    implementation(libs.androidx.ui.graphics)
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.5")
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.appcompat)
