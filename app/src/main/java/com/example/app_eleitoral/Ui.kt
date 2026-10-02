@@ -17,7 +17,7 @@ object Ui {
         LinearLayout(activity).apply {
             orientation = LinearLayout.VERTICAL
             setPadding(28, 18, 28, 24)
-            setBackgroundColor(Color.WHITE)
+            setBackgroundResource(R.drawable.fundofinal)
             addView(ImageView(activity).apply {
                 setImageResource(R.drawable.eleitoral)
                 scaleType = ImageView.ScaleType.CENTER_INSIDE

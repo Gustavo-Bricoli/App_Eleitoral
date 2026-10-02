@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity_problemas"
-    android:background="@drawable/retangulo">
+    android:background="@drawable/fundofinal">
 
     <Button
         android:id="@+id/btconfirmar4"

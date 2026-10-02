@@ -24,10 +24,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity_problemas"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
             android:name=".activity_dadosentrevistado"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
@@ -48,6 +44,9 @@
             android:exported="false" />
         <activity
             android:name=".AdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChartsActivity"
             android:exported="false" />
         <activity
             android:name=".telaadmin"
