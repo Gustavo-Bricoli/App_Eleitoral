@@ -2,6 +2,7 @@ package com.example.app_eleitoral
 
 import android.graphics.Color
 import android.os.Bundle
+import android.content.Intent
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -28,6 +29,11 @@ class AdminActivity : AppCompatActivity() {
             }
         }
         root.addView(Ui.button(this, "Voltar") { finish() })
+        if (!people) {
+            root.addView(Ui.button(this, "Abrir gráficos") {
+                startActivity(Intent(this, ChartsActivity::class.java))
+            })
+        }
         setContentView(root)
     }
 

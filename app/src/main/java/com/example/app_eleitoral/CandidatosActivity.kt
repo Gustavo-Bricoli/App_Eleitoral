@@ -74,6 +74,6 @@ class CandidatosActivity : AppCompatActivity() {
 
     private fun next(candidatos: String) {
         SurveyDraft.candidato = candidatos
-        startActivity(Intent(this, activity_problemas::class.java))
+        startActivity(Intent(this, ProblemasActivity::class.java))
     }
 }

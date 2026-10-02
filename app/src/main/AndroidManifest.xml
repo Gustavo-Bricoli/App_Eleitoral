@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App_eleitoral">
         <activity
-            android:name=".activity_dadosentrevistado"
+            android:name=".activity_login"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
@@ -24,11 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity_problemas"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".activity_login"
+            android:name=".activity_dadosentrevistado"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
@@ -48,6 +44,9 @@
             android:exported="false" />
         <activity
             android:name=".AdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChartsActivity"
             android:exported="false" />
         <activity
             android:name=".telaadmin"
