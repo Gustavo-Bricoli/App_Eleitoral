@@ -86,7 +86,7 @@ object AppStore {
         Database(context).use { helper ->
             helper.readableDatabase.query(
                 TABLE_RESPONSES,
-                arrayOf("nome", "telefone", "candidato", "problemas", "data", "horario", "localizacao"),
+                arrayOf("nome", "telefone", "candidato", "problemas", "data", "horario", "localizacao", "ASSINATURA"),
                 null,
                 null,
                 null,
@@ -100,6 +100,7 @@ object AppStore {
                 val data = cursor.getColumnIndexOrThrow("data")
                 val horario = cursor.getColumnIndexOrThrow("horario")
                 val localizacao = cursor.getColumnIndexOrThrow("localizacao")
+                val assinatura = cursor.getColumnIndexOrThrow("ASSINATURA")
                 return buildList {
                     while (cursor.moveToNext()) {
                         val problemasArray = JSONArray(cursor.getString(problemas))
@@ -111,7 +112,8 @@ object AppStore {
                                 problemas = (0 until problemasArray.length()).map(problemasArray::getString),
                                 data = LocalDate.parse(cursor.getString(data)),
                                 horario = LocalTime.parse(cursor.getString(horario)),
-                                localizacao = cursor.getString(localizacao)
+                                localizacao = cursor.getString(localizacao),
+                                assinaturaBase64 = cursor.getString(assinatura)
                             )
                         )
                     }

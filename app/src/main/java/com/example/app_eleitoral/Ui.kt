@@ -1,5 +1,6 @@
 package com.example.app_eleitoral
 
+import android.content.res.Resources
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
@@ -13,6 +14,9 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import java.io.ByteArrayOutputStream
 import android.util.Base64
+
+val Int.dp: Int
+    get() = (this * Resources.getSystem().displayMetrics.density).toInt()
 
 object Ui {
     val green = Color.rgb(46, 125, 50)
@@ -45,17 +49,17 @@ object Ui {
             setOnClickListener { action() }
             setTextColor(Color.WHITE)
             setBackgroundColor(green)
-            minHeight = 52
-            setPadding(12, 0, 12, 0)
+            textSize = 15f
+            minHeight = 48.dp
+            setPadding(16.dp, 14.dp, 16.dp, 14.dp)
             layoutParams = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
-                56
+                LinearLayout.LayoutParams.WRAP_CONTENT
             ).apply {
-                topMargin = 8
-                bottomMargin = 8
+                topMargin = 8.dp
+                bottomMargin = 8.dp
             }
         }
-
     fun message(activity: AppCompatActivity, text: String) {
         AlertDialog.Builder(activity).setMessage(text).setPositiveButton("OK", null).show()
     }

@@ -68,6 +68,7 @@
             android:text="Candidato 4 \n Partido: "
             tools:layout_editor_absoluteX="47dp"
             tools:layout_editor_absoluteY="279dp" />
+
         <RadioButton
             android:id="@+id/radioButton5"
             android:layout_width="wrap_content"
@@ -86,8 +87,8 @@
 
         <RadioButton
             android:id="@+id/radioButton7"
-            android:layout_width="275dp"
-            android:layout_height="44dp"
+            android:layout_width="245dp"
+            android:layout_height="45dp"
             android:text="Não sei ou não quero responder"
             tools:layout_editor_absoluteX="47dp"
             tools:layout_editor_absoluteY="423dp" />

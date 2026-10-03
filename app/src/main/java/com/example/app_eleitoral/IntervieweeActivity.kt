@@ -23,9 +23,16 @@ class IntervieweeActivity : AppCompatActivity() {
         root.addView(Ui.title(this, "Dados do entrevistado"))
         root.addView(android.widget.TextView(this).apply {
             text = getString(R.string.interviewee_audit_notice)
+            setTextColor(android.graphics.Color.BLACK)
         })
-        nome = EditText(this).apply { hint = "Nome completo" }
-        telefone = EditText(this).apply { hint = "Celular"; inputType = 2 }
+        nome = EditText(this).apply { hint = "Nome completo"
+        setTextColor(android.graphics.Color.BLACK)
+        setHintTextColor(android.graphics.Color.DKGRAY)
+        textSize = 16f}
+        telefone = EditText(this).apply { hint = "Celular"; inputType = 2
+        setTextColor(android.graphics.Color.BLACK)
+        setHintTextColor(android.graphics.Color.DKGRAY)
+        textSize = 16f}
         root.addView(nome)
         root.addView(telefone)
         root.addView(Ui.button(this, "Finalizar pesquisa") { save() })

@@ -1,8 +1,11 @@
 package com.example.app_eleitoral
 
 import android.content.Intent
+import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
@@ -15,7 +18,6 @@ class CandidatosActivity : AppCompatActivity() {
         val photo: Int? = null
     )
 
-    // Troque os nomes, partidos e imagens desta lista quando definir os candidatos reais.
     private val candidatos = listOf(
         Candidatos("Duas-Caras", "Partido 1", R.drawable.duas_caras),
         Candidatos("Pinguim", "Partido 2", R.drawable.pinguim),
@@ -30,6 +32,21 @@ class CandidatosActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val root = Ui.root(this)
+
+        val logo = ImageView(this).apply {
+            setImageResource(R.drawable.eleitoral)
+            scaleType = ImageView.ScaleType.FIT_CENTER
+            adjustViewBounds = true
+            layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                180
+            ).apply {
+                topMargin = 16
+                bottomMargin = 16
+            }
+        }
+        root.addView(logo)
+
         root.addView(Ui.title(this, "Intenção de voto - ${SurveyDraft.mode}"))
         val group = RadioGroup(this)
         group.orientation = RadioGroup.VERTICAL
@@ -39,6 +56,7 @@ class CandidatosActivity : AppCompatActivity() {
                 group.addView(RadioButton(this).apply {
                     text = if (candidatoItem.party.isBlank()) candidatoItem.name
                     else "${candidatoItem.name}\n${candidatoItem.party}"
+                    setTextColor(Color.BLACK)
                     textSize = 16f
                     minHeight = 76
                     setPadding(8, 8, 8, 8)
@@ -52,8 +70,11 @@ class CandidatosActivity : AppCompatActivity() {
                 }) 
             }
         } else {
-            val input = android.widget.EditText(this)
-            input.hint = "Nome do candidato (resposta espontânea)"
+            val input = android.widget.EditText(this).apply {
+                hint = "Nome do candidato (resposta espontânea)"
+                setTextColor(Color.BLACK)
+                setHintTextColor(Color.DKGRAY)
+            }
             root.addView(input)
             root.addView(Ui.button(this, "Confirmar candidato") {
                 val value = input.text.toString().trim()

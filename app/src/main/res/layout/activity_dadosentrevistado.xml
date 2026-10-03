@@ -6,7 +6,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity_problemas"
     android:background="@drawable/fundofinal">
 
     <Button
@@ -74,17 +73,19 @@
         android:layout_height="64dp"
         android:hint="Nome completo"
         android:textColorHint="@color/black"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView9" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editText"
+        android:id="@+id/editTelefone"
         android:layout_width="302dp"
         android:layout_height="58dp"
         android:hint="Telefone"
         android:textColorHint="@color/black"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -97,13 +98,14 @@
         android:layout_height="80dp"
         android:layout_marginBottom="16dp"
         android:fontFamily="arial"
-        android:text="Informe para o entrevistado que seus dados não serão distribuídos, sendo apenas para fins de pesquisa eleitoral, seguindo a regulamentação da lei Lei Geral de Proteção de Dados Pessoais (LGPD)"
+        android:text="Informe para o entrevistado que seus dados não serão distribuídos, sendo apenas para fins de pesquisa eleitoral, seguindo a regulamentação da Lei Geral de Proteção de Dados Pessoais (LGPD)"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btencerrar2"
-        tools:layout_editor_absoluteX="12dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.example.app_eleitoral.AssinaturaView
         android:id="@+id/assinaturaView"
@@ -114,7 +116,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.525"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintTop_toBottomOf="@+id/editTelefone"
         app:layout_constraintVertical_bias="0.291" />
 
     <TextView
@@ -130,7 +132,7 @@
         app:layout_constraintEnd_toEndOf="@+id/assinaturaView"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/assinaturaView"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintTop_toBottomOf="@+id/editTelefone"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
