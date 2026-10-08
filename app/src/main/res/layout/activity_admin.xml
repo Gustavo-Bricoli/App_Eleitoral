@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/fundofinal">
+    <LinearLayout android:id="@+id/containerAdmin" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:orientation="vertical" android:padding="28dp">
+        <ImageView android:layout_width="match_parent" android:layout_height="110dp"
+            android:src="@drawable/eleitoral" android:scaleType="centerInside"
+            android:contentDescription="Logo da pesquisa eleitoral" />
+        <TextView android:id="@+id/textTituloAdmin" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:gravity="center"
+            android:textColor="@color/black" android:textSize="25sp" android:textStyle="bold"
+            android:padding="16dp" />
+        <Button android:id="@+id/btnVoltarAdmin" style="@style/SurveyButton" android:text="Voltar" />
+        <Button android:id="@+id/btnGraficosAdmin" style="@style/SurveyButton"
+            android:text="Abrir gráficos" android:visibility="gone" />
+    </LinearLayout>
+</ScrollView>

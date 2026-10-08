@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fundofinal">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="28dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:src="@drawable/eleitoral"
+            android:scaleType="centerInside"
+            android:contentDescription="Logo da pesquisa eleitoral" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Pesquisa espontânea"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:padding="16dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pergunte ao entrevistado em quem ele votaria e digite o nome informado."
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+        <EditText
+            android:id="@+id/editRespostaEspontanea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nome do candidato"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textColorHint="#99000000"
+            android:layout_marginTop="20dp" />
+        <Button
+            android:id="@+id/btnConfirmarCandidato"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Continuar para pesquisa estimulada"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/survey_green"
+            android:layout_marginTop="20dp" />
+    </LinearLayout>
+</ScrollView>

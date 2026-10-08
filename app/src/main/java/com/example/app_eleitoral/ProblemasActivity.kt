@@ -1,13 +1,10 @@
 package com.example.app_eleitoral
 
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.widget.CheckBox
 import android.widget.EditText
-import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.ScrollView
 import androidx.appcompat.app.AppCompatActivity
 
 class ProblemasActivity : AppCompatActivity() {
@@ -19,77 +16,27 @@ class ProblemasActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        val scrollView = ScrollView(this).apply {
-            isFillViewport = true
-        }
-
-        val root = Ui.root(this)
-
-        val logo = ImageView(this).apply {
-            setImageResource(R.drawable.eleitoral)
-            scaleType = ImageView.ScaleType.FIT_CENTER
-            adjustViewBounds = true
-            layoutParams = LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                180
-            ).apply {
-                topMargin = 16
-                bottomMargin = 16
-            }
-        }
-        root.addView(logo)
-
-        root.addView(Ui.title(this, "Selecione até três problemas"))
-
+        setContentView(R.layout.activity_problemas)
+        val container = findViewById<LinearLayout>(R.id.containerProblemas)
         val checks = problemas.map { label ->
             CheckBox(this).apply {
                 text = label
-                setTextColor(Color.BLACK)
+                setTextColor(getColor(R.color.black))
+                buttonTintList = getColorStateList(R.color.survey_green)
             }
         }
-        checks.forEach { check ->
-            root.addView(check, LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-            ))
-        }
+        checks.forEach(container::addView)
 
-        val other = EditText(this).apply {
-            hint = "Outro problema (opcional)"
-            setTextColor(Color.BLACK)
-            setHintTextColor(Color.DKGRAY)
-        }
-        root.addView(other)
-
-        val btnContinuar = Ui.button(this, "Continuar") {
+        val other = findViewById<EditText>(R.id.editOutroProblema)
+        findViewById<android.widget.Button>(R.id.btnContinuarProblemas).setOnClickListener {
             val selected = checks.filter { it.isChecked }.map { it.text.toString() }.toMutableList()
-            val otherValue = other.text.toString().trim()
-            if (otherValue.isNotEmpty()) selected.add(otherValue)
-
+            other.text.toString().trim().takeIf { it.isNotEmpty() }?.let(selected::add)
             if (selected.size > 3) {
                 Ui.message(this, "Escolha no máximo três problemas.")
             } else {
                 SurveyDraft.problemas = selected
                 startActivity(Intent(this, activity_dadosentrevistado::class.java))
             }
-        }.apply {
-            minHeight = 140
-            setPadding(32, 24, 32, 24)
-            textSize = 16f
         }
-
-        val paramsBotao = LinearLayout.LayoutParams(
-            LinearLayout.LayoutParams.MATCH_PARENT,
-            LinearLayout.LayoutParams.WRAP_CONTENT
-        ).apply {
-            topMargin = 24
-            bottomMargin = 48
-        }
-
-        root.addView(btnContinuar, paramsBotao)
-
-        scrollView.addView(root)
-        setContentView(scrollView)
     }
 }

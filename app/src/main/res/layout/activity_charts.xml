@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:padding="28dp" android:background="@drawable/fundofinal">
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="Gráficos dos resultados" android:gravity="center"
+        android:textColor="@color/black" android:textSize="25sp" android:textStyle="bold"
+        android:padding="16dp" />
+    <Button android:id="@+id/btnPizza" style="@style/SurveyButton" android:text="Gráfico de pizza - votos" />
+    <Button android:id="@+id/btnBarras" style="@style/SurveyButton" android:text="Gráfico de barras - problemas" />
+    <LinearLayout android:id="@+id/containerGraficos" android:layout_width="match_parent"
+        android:layout_height="0dp" android:layout_weight="1" android:orientation="vertical" />
+    <Button android:id="@+id/btnVoltarGraficos" style="@style/SurveyButton" android:text="Voltar" />
+</LinearLayout>

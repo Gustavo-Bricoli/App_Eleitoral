@@ -22,11 +22,13 @@ data class SurveyResponse(
 
 object SurveyDraft {
     var candidato: String = ""
+    var candidatoEspontaneo: String = ""
     var problemas: List<String> = emptyList()
     var mode: String = "Espontânea"
 
     fun clear() {
         candidato = ""
+        candidatoEspontaneo = ""
         problemas = emptyList()
         mode = "Espontânea"
     }

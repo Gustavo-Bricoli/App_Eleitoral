@@ -14,13 +14,12 @@ class AdminActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val responses = AppStore.load(this)
 
-        val scrollView = ScrollView(this).apply {
-            isFillViewport = true
-        }
-        val root = Ui.root(this)
+        setContentView(R.layout.activity_admin)
+        val root = findViewById<LinearLayout>(R.id.containerAdmin)
 
         val people = intent.getStringExtra("screen") == "people"
-        root.addView(Ui.title(this, if (people) "Entrevistados" else "Resultado da pesquisa"))
+        findViewById<android.widget.TextView>(R.id.textTituloAdmin).text =
+            if (people) "Entrevistados" else "Resultado da pesquisa"
 
         if (people) {
             if (responses.isEmpty()) {
@@ -63,15 +62,13 @@ class AdminActivity : AppCompatActivity() {
             }
         }
 
-        root.addView(Ui.button(this, "Voltar") { finish() })
+        findViewById<android.widget.Button>(R.id.btnVoltarAdmin).setOnClickListener { finish() }
         if (!people) {
-            root.addView(Ui.button(this, "Abrir gráficos") {
+            findViewById<android.widget.Button>(R.id.btnGraficosAdmin).visibility = android.view.View.VISIBLE
+            findViewById<android.widget.Button>(R.id.btnGraficosAdmin).setOnClickListener {
                 startActivity(Intent(this, ChartsActivity::class.java))
-            })
+            }
         }
-
-        scrollView.addView(root)
-        setContentView(scrollView)
     }
 
     private fun addLine(root: LinearLayout, text: String) {

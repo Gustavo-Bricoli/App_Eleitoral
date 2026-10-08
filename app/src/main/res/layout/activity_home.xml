@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fundofinal">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="28dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:src="@drawable/eleitoral"
+            android:scaleType="centerInside"
+            android:contentDescription="Logo da pesquisa eleitoral" />
+        <TextView
+            android:id="@+id/textTituloHome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:padding="16dp" />
+        <Button android:id="@+id/btnNovaPesquisa" style="@style/SurveyButton" android:text="Nova pesquisa" />
+        <Button android:id="@+id/btnResultados" style="@style/SurveyButton" android:text="Visualizar resultados" />
+        <Button android:id="@+id/btnEntrevistados" style="@style/SurveyButton" android:text="Consultar entrevistados" />
+        <Button android:id="@+id/btnLimparDados" style="@style/SurveyButton" android:text="Limpar dados da pesquisa" />
+        <Button android:id="@+id/btnSair" style="@style/SurveyButton" android:text="Sair" />
+    </LinearLayout>
+</ScrollView>

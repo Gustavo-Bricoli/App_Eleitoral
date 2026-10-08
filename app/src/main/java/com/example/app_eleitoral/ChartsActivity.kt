@@ -17,16 +17,11 @@ class ChartsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val root = Ui.root(this)
-        root.addView(Ui.title(this, "Gráficos dos resultados"))
-        root.addView(Ui.button(this, "Gráfico de pizza - votos") { showPie() })
-        root.addView(Ui.button(this, "Gráfico de barras - problemas") { showBars() })
-        chartContainer = LinearLayout(this).apply {
-            orientation = LinearLayout.VERTICAL
-        }
-        root.addView(chartContainer, LinearLayout.LayoutParams(-1, 0, 1f))
-        root.addView(Ui.button(this, "Voltar") { finish() })
-        setContentView(root)
+        setContentView(R.layout.activity_charts)
+        chartContainer = findViewById(R.id.containerGraficos)
+        findViewById<android.widget.Button>(R.id.btnPizza).setOnClickListener { showPie() }
+        findViewById<android.widget.Button>(R.id.btnBarras).setOnClickListener { showBars() }
+        findViewById<android.widget.Button>(R.id.btnVoltarGraficos).setOnClickListener { finish() }
         showPie()
     }
 
