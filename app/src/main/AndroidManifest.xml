@@ -40,22 +40,11 @@
             android:name=".ProblemasActivity"
             android:exported="false" />
         <activity
-            android:name=".IntervieweeActivity"
-            android:exported="false" />
-        <activity
             android:name=".AdminActivity"
             android:exported="false" />
         <activity
             android:name=".ChartsActivity"
             android:exported="false" />
-        <activity
-            android:name=".telaadmin"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".dadoseleitores"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
